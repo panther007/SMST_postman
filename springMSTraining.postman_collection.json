@@ -1,0 +1,138 @@
+{
+	"info": {
+		"_postman_id": "aefdef82-05bb-487b-b1a8-3ffd7b84003a",
+		"name": "springMSTraining",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "getUsers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ApiUrl}}/user/get",
+							"host": [
+								"{{ApiUrl}}"
+							],
+							"path": [
+								"user",
+								"get"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getUser PathVariable",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ZUULURL}}/user/get/101",
+							"host": [
+								"{{ZUULURL}}"
+							],
+							"path": [
+								"user",
+								"get",
+								"101"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actuator Refresh",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{USER_ApiUrl}}/actuator/refresh",
+							"host": [
+								"{{USER_ApiUrl}}"
+							],
+							"path": [
+								"actuator",
+								"refresh"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "car",
+			"item": [
+				{
+					"name": "getCar PathVariable",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ZUULURL}}/car/get/101",
+							"host": [
+								"{{ZUULURL}}"
+							],
+							"path": [
+								"car",
+								"get",
+								"101"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "bc0d3fc7-f282-49ed-81f4-d25a9dfbea7d",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "7104aa4b-d1c4-4f7c-bc6d-1c1e177506e3",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "6a0cda30-6b16-4c0c-a90d-625256f8fa08",
+			"key": "ApiUrl",
+			"value": "http://localhost:8080",
+			"type": "string"
+		},
+		{
+			"id": "9ea7675e-5a85-4c42-a753-3b3bc913a0a2",
+			"key": "ZUULURL",
+			"value": "http://localhost:2222",
+			"type": "string"
+		},
+		{
+			"id": "23977a5c-579b-4b63-b064-c5a2d8a8dd44",
+			"key": "USER_ApiUrl",
+			"value": "http://localhost:8082",
+			"type": "string"
+		}
+	],
+	"protocolProfileBehavior": {}
+}
